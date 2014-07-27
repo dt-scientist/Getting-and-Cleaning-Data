@@ -14,7 +14,8 @@ text to lowercase. Use the `join()` function in the `plyr package` to join `Y_tr
 Column `Activity` contains the descriptive name of the short identifier: `id`. 
 
 ### Section 4: Appropriately labels the data set with descriptive variable names.
-Create a tidy dataset: `dataset1` from the 3 data frames (`X_train_test`,`S_train_test`,`X_train_test_mean_std`) using cbind.
+Create a tidy dataset: `dataset1` from the 3 data frames (`X_train_test`,`S_train_test`,`X_train_test_mean_std`) 
+using `cbind()` function.
 
 ### Section 5: Creates a 2nd, independent tidy data set with the average of each variable for each activity and each subject.
 Create a new dataset: `dataset2`. Use the `aggregate()` function to aggregate the 561 time and frequency domain variables
