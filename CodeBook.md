@@ -24,45 +24,41 @@ These signals were used to estimate variables of the feature vector for each pat
 File name | short description | rows | columns
 --------- | ----------------- | ---- | -------
 subject_test.txt | Contains the Volunteer id. The file contains 30 unique ids. | 10299 | 1
-X_test.txt / X_train.txt | A 561-feature vector with time and frequency domain variables.	10299	561
-Y_test.txt / Y_train.txt | The file contains 6 unique activity ids. (1,2,3,4,5,6). Each activity id corresponds to an activity name.	10299	1
+X_test.txt / X_train.txt | A 561-feature vector with time and frequency domain variables | 10299 | 561
+Y_test.txt / Y_train.txt | The file contains 6 unique activity ids. (1,2,3,4,5,6). Each activity id corresponds to an activity name. | 10299 | 1
 activity_labels.txt | descriptive names for activity ids | 6 | 2
-	| 1 WALKING | | |
-	| 2 WALKING_UPSTAIRS | | |
-	| 3 WALKING_DOWNSTAIRS | | |
-	| 4 SITTING | | |
-	| 5 STANDING | | |
-	| 6 LAYIN | | |
-
-
+	| 1 -> WALKING | | 
+	| 2 -> WALKING_UPSTAIRS | | 
+	| 3 -> WALKING_DOWNSTAIRS | | 
+	| 4 -> SITTING | | 
+	| 5 -> STANDING |  |
+	| 6 -> LAYING | | 
 features.txt | The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. | 561 | 2
-	| Abbreviations and their meanings: | 		
-	| prefix 't' to denote time (Time domain signals)|
-	| prefix 'f' to denote frequency (Frequency domain signals)| 
-	| -XYZ' is used to denote 3-axial signals in the X, Y and Z directions| 
-	| Acc = accelometer| 
-	| Gyro = gyroscope| 
-	| BodyAcc=body accelaration signal| 
-	| GravityAcc=gravity acceleration signal| 
-	| mean(): Mean value| 
-	| std(): Standard deviation| 
-	| mad(): Median absolute deviation | 
-	| max(): Largest value in array| 
-	| min(): Smallest value in array| 
-	| sma(): Signal magnitude area| 
-	| energy(): Energy measure. Sum of the squares divided by the number of values.| 
-	| iqr(): Interquartile range| 
-	| entropy(): Signal entropy| 
-	| arCoeff(): Autorregresion coefficients with Burg order equal to 4| 
-	| correlation(): correlation coefficient between two signals| 
-	| maxInds(): index of the frequency component with largest magnitude| 
-	| meanFreq(): Weighted average of the frequency components to obtain a mean frequency| 
-	| skewness(): skewness of the frequency domain signal | 
-	| kurtosis(): kurtosis of the frequency domain signal | 
-	| bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.| 
-	| angle(): Angle between to vectors.| 
-
-
+	| Abbreviations and their meanings: | |
+	| prefix 't' to denote time (Time domain signals)| |
+	| prefix 'f' to denote frequency (Frequency domain signals)| |
+	| -XYZ' is used to denote 3-axial signals in the X, Y and Z directions| |
+	| Acc = accelometer| |
+	| Gyro = gyroscope| |
+	| BodyAcc=body accelaration signal| |
+	| GravityAcc=gravity acceleration signal| |
+	| mean(): Mean value| |
+	| std(): Standard deviation| |
+	| mad(): Median absolute deviation | |
+	| max(): Largest value in array| |
+	| min(): Smallest value in array| |
+	| sma(): Signal magnitude area| |
+	| energy(): Energy measure. Sum of the squares divided by the number of values.| |
+	| iqr(): Interquartile range| |
+	| entropy(): Signal entropy| |
+	| arCoeff(): Autorregresion coefficients with Burg order equal to 4| |
+	| correlation(): correlation coefficient between two signals| |
+	| maxInds(): index of the frequency component with largest magnitude| |
+	| meanFreq(): Weighted average of the frequency components to obtain a mean frequency| |
+	| skewness(): skewness of the frequency domain signal | |
+	| kurtosis(): kurtosis of the frequency domain signal | |
+	| bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.| |
+	| angle(): Angle between to vectors.| |
 
 #### Transformations
 
@@ -79,7 +75,7 @@ The new data set contains variables whose names contain the string `mean()` or `
 
 ###### Section3
 Used descriptive activity names to name the activities in the `Y_train_test`.
-Column `id` contains the numbers that represent the activity id while column activity contains the descriptive name of the activity.
+Column `id` contains the numbers that represent the activity ids while column activity contains the descriptive name of the activity id.
 
 ###### Section 4
 Merged the `S_train_test`, `Y_train_test` and `X_train_test_mean_std` data sets to create one data set `dataset1`. `dataset1` was created by binding together dataframes horizontally.
@@ -89,4 +85,4 @@ Merged the `S_train_test`, `Y_train_test` and `X_train_test_mean_std` data sets 
 Created a new data set `dataset2` with the average of each variable for each activity and each subject. The new object is 2-dimensional with 180 rows and 563 columns.
 The number of rows is the product of the number of volunteers, and the number of activities (so, 30 × 6  180 rows). 
 
-Check the `README.md` file for further details about this dataset.
+**Check the `README.md` file for further details about dataset1 and dataset2**
