@@ -52,7 +52,7 @@ Y_train_test <- join(Y_train_test,activity_lbls,type="inner")
 #   just merge the three data sets into one
 
 dataset1 <- cbind(S_train_test, Y_train_test , X_train_test_mean_std)
-write.csv(dataset1, file='dataset1.CSV', row.names=TRUE)
+write.csv(dataset1, file='dataset1.txt', row.names=TRUE)
 
 
 # 5. Creates a 2nd, independent tidy data set with the average of each variable for each activity and each subject.
