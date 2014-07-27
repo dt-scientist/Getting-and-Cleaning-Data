@@ -33,7 +33,6 @@ X_train_test_mean_std <- X_train_test[, grep("([Mm]ean|[Ss]td)\\(\\)", colnames(
 # head(features,1)
 # dim(X_train_test_mean_std)
 # tail(features)
-# nrow()
 
 # 3. Uses descriptive activity names to name the activities in the data set
 library("plyr")
@@ -41,7 +40,6 @@ activity_lbls <- read.table("activity_labels.txt")
 names(activity_lbls) <- c("id","activity")
 activity_lbls$activity <- tolower(activity_lbls$activity)
 Y_train_test <- join(Y_train_test,activity_lbls,type="inner")
-
 
 # head(Y_train_test)
 # dim(Y_train_test)
@@ -52,38 +50,12 @@ Y_train_test <- join(Y_train_test,activity_lbls,type="inner")
 
 #   all data sets are already labeled (see above). 
 #   just merge the three data sets into one
+
 dataset1 <- cbind(S_train_test, Y_train_test , X_train_test_mean_std)
+write.csv(dataset1, file='dataset1.CSV', row.names=TRUE)
 
 
 # 5. Creates a 2nd, independent tidy data set with the average of each variable for each activity and each subject.
 
-
-names(X_train_test) <-features[,2]
-dataset2 <-cbind(S_train_test, activity=Y_train_test$activity , X_train_test)
-dataset2<-subset(dataset2, select = -c("id"))
-averages <- aggregate(X_train_test, by = list(activity = Y_train_test[,2], subject = S_train_test[,1]), mean)
-
-
-require(plyr)
-df2 <- ddply(dataset2, c("subject", "activity"), function(x) colMeans(x[c(colnames(dataset2)[3:563])]))
-
-tidyData    = aggregate(dataset2[,names(dataset2)],by=list(activity=dataset2$activity,subject = dataset2$subject),mean);
-
-averages <- aggregate(dataset2, by = list(activity, subject), mean)
-averages <- aggregate(X_train_test, by = list(activity = Y_train_test[,1], subject = S_train_test[,1]), mean)
-
-averages <- aggregate(X_train_test, by = list(activity = Y_train_test[,2], subject = S_train_test[,1]), mean)
-averages[averages$subject==1,]
-write.csv(dataset2, file='result.CSV', row.names=FALSE)
-
-
-head(S_train_test,4)
-head(names(dataset2),4000)
-names(dataset2)
-names(Y_train_test)
-dim(averages)
-unique(dataset2[dataset2$subject==1])
-unique(dataset2[dataset2$subject==1])
-head(dataset2,2)
-class(averages)
+dataset2 <- aggregate(X_train_test, by = list(activity = Y_train_test[,2], subject = S_train_test[,1]), mean)
 
