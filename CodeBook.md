@@ -1,4 +1,4 @@
-### Data Set Code Book: Human Activity Recognition Using Smartphones Data Set
+###~ Data Set Code Book: Human Activity Recognition Using Smartphones Data Set
 
 ##### SUMMARY
 The purpose of this project prepare tidy data that can be used for later analysis.
@@ -26,7 +26,7 @@ File name | short description | rows | columns
 subject_test.txt | Contains the Volunteer id. The file contains 30 unique ids. | 10299 | 1
 X_test.txt / X_train.txt | A 561-feature vector with time and frequency domain variables | 10299 | 561
 Y_test.txt / Y_train.txt | The file contains 6 unique activity ids. (1,2,3,4,5,6). Each activity id corresponds to an activity name. | 10299 | 1
-activity_labels.txt | descriptive names for activity ids | 6 | 2
+activity_labels.txt | Descriptive names for activity ids | 6 | 2
 	| 1 -> WALKING | | 
 	| 2 -> WALKING_UPSTAIRS | | 
 	| 3 -> WALKING_DOWNSTAIRS | | 
@@ -34,7 +34,7 @@ activity_labels.txt | descriptive names for activity ids | 6 | 2
 	| 5 -> STANDING |  |
 	| 6 -> LAYING | | 
 features.txt | The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. | 561 | 2
-	| Abbreviations and their meanings: | |
+	| *Abbreviations and their meanings:* | |
 	| prefix 't' to denote time (Time domain signals)| |
 	| prefix 'f' to denote frequency (Frequency domain signals)| |
 	| -XYZ' is used to denote 3-axial signals in the X, Y and Z directions| |
